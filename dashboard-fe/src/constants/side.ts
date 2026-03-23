@@ -1,6 +1,6 @@
 export const SIDE = {
-  BUY: 'buy',
-  SELL: 'sell'
+  BUY: 'Buy',
+  SELL: 'Sell'
 } as const
 
 export type SideType = (typeof SIDE)[keyof typeof SIDE];

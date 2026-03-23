@@ -1,4 +1,5 @@
 import clsx from 'clsx'
+import { camelCase } from 'lodash'
 
 export interface RowProps {
   headings: string[];
@@ -15,7 +16,7 @@ export const Row = ({ headings, data }: RowProps) => {
             "border-r": index !== headings.length - 1,
           })}
         >
-          {data[heading]}
+          {data[camelCase(heading)]}
         </td>
       ))}
     </tr>

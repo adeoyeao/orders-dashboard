@@ -11,7 +11,7 @@ export class ConfigsController {
   }
 
   @Get('companies')
-  getCompanies(): { id: number; companyName: string; sector: string }[] {
+  getCompanies(): { id: number; company: string; sector: string }[] {
     return this.configsService.getCompanies();
   }
 

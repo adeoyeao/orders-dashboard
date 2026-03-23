@@ -8,12 +8,12 @@ export class ConfigsService {
     return HEADINGS
   }
 
-  getCompanies(): {id: number, companyName: string, sector: string}[] {
+  getCompanies(): {id: number, company: string, sector: string}[] {
     return COMPANIES
   }
 
   getCompanySector(company: string): string {
     console.log(company)
-    return COMPANIES.find(data => data.companyName === company)?.sector || 'Unknown'
+    return COMPANIES.find(data => data.company === company)?.sector || 'Unknown'
   }
  }

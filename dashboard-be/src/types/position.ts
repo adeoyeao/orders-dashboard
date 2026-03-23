@@ -1,6 +1,6 @@
 export interface Position {
-  "Company": string;
-  "Sector": string;
-  "Side": string;
-  "Order Qty": number;
+  company: string;
+  sector: string;
+  side: string;
+  orderQty: number;
 }
