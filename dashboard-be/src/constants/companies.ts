@@ -1,0 +1,96 @@
+export const COMPANIES = [
+  { id: 1, companyName: 'Evogene Ltd.', sector: 'Basic Industries' },
+  { id: 2, companyName: 'Huntsman Corporation', sector: 'Basic Industries' },
+  {
+    id: 3,
+    companyName: 'China Southern Airlines Company Limited',
+    sector: 'Transportation',
+  },
+  { id: 4, companyName: 'Arch Capital Group Ltd.', sector: 'Asset Management' },
+  {
+    id: 5,
+    companyName: 'China Advanced Construction Materials Group, Inc.',
+    sector: 'Basic Industries',
+  },
+  {
+    id: 6,
+    companyName: 'Cellectar Biosciences, Inc.',
+    sector: 'Health Care',
+  },
+  {
+    id: 7,
+    companyName: 'Maui Land & Pineapple Company, Inc.',
+    sector: 'Finance',
+  },
+  { id: 8, companyName: 'MYOS RENS Technology Inc.', sector: 'Health Care' },
+  {
+    id: 9,
+    companyName: 'FelCor Lodging Trust Incorporated',
+    sector: 'Consumer Services',
+  },
+  { id: 10, companyName: 'Entergy Texas Inc', sector: 'Public Utilities' },
+  { id: 11, companyName: 'Koninklijke Philips N.V.', sector: 'Energy' },
+  { id: 12, companyName: 'Wix.com Ltd.', sector: 'Technology' },
+  { id: 13, companyName: 'Spok Holdings, Inc.', sector: 'Public Utilities' },
+  { id: 14, companyName: 'The Bancorp, Inc.', sector: 'Finance' },
+  { id: 15, companyName: 'First Trust', sector: 'Asset Management' },
+  { id: 16, companyName: 'Square, Inc.', sector: 'Technology' },
+  { id: 17, companyName: 'CenterState Banks, Inc.', sector: 'Finance' },
+  {
+    id: 18,
+    companyName: 'VelocityShares 3x Inverse Silver ETN',
+    sector: 'Finance',
+  },
+  {
+    id: 19,
+    companyName: 'Forest City Realty Trust, Inc.',
+    sector: 'Asset Management',
+  },
+  {
+    id: 20,
+    companyName: 'FactSet Research Systems Inc.',
+    sector: 'Technology',
+  },
+  {
+    id: 21,
+    companyName: 'Tootsie Roll Industries, Inc.',
+    sector: 'Consumer Non-Durables',
+  },
+  {
+    id: 22,
+    companyName: 'Hormel Foods Corporation',
+    sector: 'Consumer Non-Durables',
+  },
+  { id: 23, companyName: 'eHealth, Inc.', sector: 'Finance' },
+  { id: 24, companyName: 'Aegion Corp', sector: 'Basic Industries' },
+  {
+    id: 25,
+    companyName: 'Invesco Municipal Income Opportunities Trust',
+    sector: 'Asset Management',
+  },
+  {
+    id: 26,
+    companyName: 'China Auto Logistics Inc.',
+    sector: 'Consumer Services',
+  },
+  {
+    id: 27,
+    companyName: 'Atmos Energy Corporation',
+    sector: 'Public Utilities',
+  },
+  {
+    id: 28,
+    companyName: 'root9B Holdings, Inc.',
+    sector: 'Consumer Services',
+  },
+  {
+    id: 29,
+    companyName: 'Ampco-Pittsburgh Corporation',
+    sector: 'Capital Goods',
+  },
+  {
+    id: 30,
+    companyName: 'Nuveen AMT-Free Municipal Value Fund',
+    sector: 'Asset Management',
+  },
+];
