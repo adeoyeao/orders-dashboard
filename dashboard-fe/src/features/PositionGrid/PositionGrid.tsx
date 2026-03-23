@@ -1,30 +1,36 @@
 import { Table } from "@/components";
-import { useGetHeadings, useGetPositions } from "@/data";
+import { useGetHeadings, useGetPositions, useGetRows, useSocket } from "@/data";
 import { useGetHeight } from "@/hooks";
-import { useRef } from 'react'
+import { useRef } from "react";
 
 export const PositionGrid = () => {
-  const sectionRef = useRef<HTMLElement>(null)
+  useSocket(import.meta.env.VITE_POSITIONS_WS);
+
+  const sectionRef = useRef<HTMLElement>(null);
   const {
     data: headingsData,
     isLoading: isHeadingsLoading,
     isError: isHeadingsError,
   } = useGetHeadings();
   const {
-    data: tableData,
     isLoading: isTableDataLoading,
-    isError: isTableDataError
-  } = useGetPositions()
-  const { height } = useGetHeight(sectionRef.current)
+    isError: isTableDataError,
+  } = useGetPositions()();
+  const { height } = useGetHeight(sectionRef.current);
+  const rows = useGetRows();
 
   return (
     <section className="w-full col-span-4 h-full" ref={sectionRef}>
-      {(isHeadingsLoading || isTableDataLoading) ? (
+      {isHeadingsLoading || isTableDataLoading ? (
         <div>Loading...</div>
-      ) : (isHeadingsError || isTableDataError) ? (
+      ) : isHeadingsError || isTableDataError ? (
         <div>Failed to fetch data</div>
       ) : (
-        <Table headings={headingsData as string[]} tableData={tableData as {[x: string]: number | string}[]} primaryKey="Company" height={height}/>
+        <Table
+          headings={headingsData as string[]}
+          rows={rows}
+          height={height}
+        />
       )}
     </section>
   );

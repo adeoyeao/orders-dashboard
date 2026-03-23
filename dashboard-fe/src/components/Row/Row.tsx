@@ -1,23 +1,22 @@
-import clsx from 'clsx'
-import { camelCase } from 'lodash'
+import { camelCase } from "lodash";
+import type { Position } from "@/types";
+import { Cell } from "../Cell";
 
 export interface RowProps {
   headings: string[];
-  data: { [x: string]: string | number };
+  rowIndex: number;
 }
 
-export const Row = ({ headings, data }: RowProps) => {
+export const Row = ({ headings, rowIndex }: RowProps) => {
   return (
     <tr className="w-full border-b grid grid-cols-4">
       {headings.map((heading, index) => (
-        <td
-          key={heading}
-          className={clsx("p-1 text-left", {
-            "border-r": index !== headings.length - 1,
-          })}
-        >
-          {data[camelCase(heading)]}
-        </td>
+        <Cell
+          key={`${heading}-${rowIndex}-${index}`}
+          isLast={index === headings.length - 1}
+          rowIndex={rowIndex}
+          field={camelCase(heading) as keyof Position}
+        />
       ))}
     </tr>
   );

@@ -1,25 +1,37 @@
-import { io, Socket } from 'socket.io-client'
-import { useEffect } from 'react'
+import { io, Socket } from "socket.io-client";
+import { useEffect } from "react";
 
-let socket: Socket | null = null
+const sockets = new Map<string, Socket>();
 
 export const getSocket = (url: string): Socket => {
-  if (!socket) {
-    socket = io(url, {
-      autoConnect: false
-    })
+  const existingSocket = sockets.get(url);
+  if (existingSocket) {
+    return existingSocket;
   }
 
-  return socket
-}
+  const socket = io(url, {
+    autoConnect: false,
+  });
+
+  sockets.set(url, socket);
+
+  return socket;
+};
 
 export const useSocket = (url: string): Socket => {
   const socket = getSocket(url);
 
   useEffect(() => {
-    socket.connect();
-    return () => { socket. disconnect() }
-  }, [])
+    if (!socket.connected) {
+      socket.connect();
+    }
 
-  return socket
-}
+    return () => {
+      if (socket.connected) {
+        socket.disconnect();
+      }
+    };
+  }, [socket]);
+
+  return socket;
+};
