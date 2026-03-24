@@ -21,17 +21,17 @@ export const useGetStats = () => {
   }, [data]);
 
   const grossQty = useMemo(() => {
-    return data.reduce((acc, cv) => {
+    return data?.reduce((acc, cv) => {
       acc += Math.abs(cv.orderQty);
       return acc
-    }, 0);
+    }, 0) || 0;
   }, [data]);
 
   const netQty = useMemo(() => {
-    return data.reduce((acc, cv) => {
+    return data?.reduce((acc, cv) => {
       acc += cv.orderQty;
       return acc
-    }, 0);
+    }, 0) || 0;
   }, [data]);
 
   return {
