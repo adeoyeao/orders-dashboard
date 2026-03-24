@@ -1,5 +1,5 @@
 import { Table } from "@/components";
-import { useGetHeadings, useGetPositions, useGetRows, useSocket } from "@/data";
+import { useGetHeadings, useGetRows, useSocket } from "@/data";
 import { useGetHeight } from "@/hooks";
 import { useRef } from "react";
 
@@ -12,18 +12,15 @@ export const PositionGrid = () => {
     isLoading: isHeadingsLoading,
     isError: isHeadingsError,
   } = useGetHeadings();
-  const {
-    isLoading: isTableDataLoading,
-    isError: isTableDataError,
-  } = useGetPositions()();
+
   const { height } = useGetHeight(sectionRef.current);
   const rows = useGetRows();
 
   return (
     <section className="w-full col-span-4 h-full" ref={sectionRef}>
-      {isHeadingsLoading || isTableDataLoading ? (
+      {isHeadingsLoading ? (
         <div>Loading...</div>
-      ) : isHeadingsError || isTableDataError ? (
+      ) : isHeadingsError ? (
         <div>Failed to fetch data</div>
       ) : (
         <Table

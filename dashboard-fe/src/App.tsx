@@ -1,5 +1,5 @@
 import { AppLayout } from "@/layout";
-import { Alerts, PositionGrid, Statistics, Toolbar } from "@/features";
+import { Alerts, PositionGrid, Statistics } from "@/features";
 import { useSocket } from "@/data";
 
 export const App = () => {
@@ -8,7 +8,6 @@ export const App = () => {
 
   return (
     <AppLayout>
-      <Toolbar />
       <Statistics />
       <Alerts />
       <PositionGrid />
