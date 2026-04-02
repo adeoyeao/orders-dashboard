@@ -4,7 +4,7 @@ import { useMemo } from 'react'
 export const useClient = () => {
   const client = useMemo(() => {
     const instance = axios.create({
-      baseURL: import.meta.env.VITE_BASE_URL,
+      baseURL: 'http://localhost:3000',
       headers: {
         "Content-Type": "application/json"
       }

@@ -3,8 +3,8 @@ import { Alerts, PositionGrid, Statistics } from "@/features";
 import { useSocket } from "@/data";
 
 export const App = () => {
-  useSocket(import.meta.env.VITE_ORDERS_WS);
-  useSocket(import.meta.env.VITE_POSITIONS_WS);
+  useSocket('http://localhost:3001');
+  useSocket('http://localhost:3002');
 
   return (
     <AppLayout>

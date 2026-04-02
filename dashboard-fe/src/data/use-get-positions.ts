@@ -11,7 +11,7 @@ export interface PositionMessage {
 export const useGetPositions = () => {
   const QUERY_KEY = "positions";
   const queryClient = useQueryClient();
-  const socket = getSocket(import.meta.env.VITE_POSITIONS_WS);
+  const socket = getSocket('http://localhost:3002');
   const query = useCreateQuery({
     key: QUERY_KEY,
     endpoint: "/position",

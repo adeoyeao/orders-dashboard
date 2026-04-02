@@ -4,7 +4,7 @@ import { useGetHeight } from "@/hooks";
 import { useRef } from "react";
 
 export const PositionGrid = () => {
-  useSocket(import.meta.env.VITE_POSITIONS_WS);
+  useSocket('http://localhost:3002');
 
   const sectionRef = useRef<HTMLElement>(null);
   const {

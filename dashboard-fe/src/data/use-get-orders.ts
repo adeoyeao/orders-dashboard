@@ -13,7 +13,7 @@ interface OrdersMessage {
 export const useGetOrders = () => {
   const QUERY_KEY = 'orders'
   const queryClient = useQueryClient();
-  const socket = getSocket(import.meta.env.VITE_ORDERS_WS);
+  const socket = getSocket('http://localhost:3001');
 
   const query = useCreateQuery({
     key: QUERY_KEY,
